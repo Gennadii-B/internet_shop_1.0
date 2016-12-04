@@ -1,7 +1,7 @@
 package ru.on_the_zero.utility.commands;
 
 import ru.on_the_zero.db.Texts;
-import ru.on_the_zero.entity.Order;
+import ru.on_the_zero.entity.Basket;
 import ru.on_the_zero.utility.Shop;
 
 /**
@@ -11,7 +11,7 @@ public class NewBuy implements Command {
 
     @Override
     public void action(String[] messege) {
-        Shop.setOrder(new Order());
+        Shop.setBasket(new Basket());
         System.out.println(Texts.TEXT_CREATED_NEW_ORDER);
     }
 

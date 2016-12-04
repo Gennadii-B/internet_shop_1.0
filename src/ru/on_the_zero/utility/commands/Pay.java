@@ -12,9 +12,9 @@ public class Pay implements Command{
 
     @Override
     public void action(String[] messege) {
-        Shop.getOrder().setDateBuy(LocalDate.now());
-        Shop.getStock().getOrders().add(Shop.getOrder());
-        Shop.setOrder(null);
+        Shop.getBasket().setDateBuy(LocalDate.now());
+        Shop.getStock().getBaskets().add(Shop.getBasket());
+        Shop.setBasket(null);
         System.out.println(Texts.TEXT_BUY_CLOSED);
     }
 

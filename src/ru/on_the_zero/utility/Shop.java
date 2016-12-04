@@ -19,17 +19,13 @@ public class Shop {
     private Shop() {
     }
 
-    private Packing packing = new Packing();
-    private Unpacking unpacking = new Unpacking();
-    private Initializer initializer = new Initializer();
-
     public static final boolean OPEN = true;
     public static final boolean CLOSED = false;
     private boolean shopStatus = OPEN;
 
     private static ArrayList<Command> commands = new ArrayList<>();
     private static Stock stock = new Stock();
-    private static Order order;
+    private static Basket basket;
 
     public Command processing(String[] messege){
         Command needCommand = null;
@@ -46,12 +42,12 @@ public class Shop {
         return commands;
     }
 
-    public static Order getOrder() {
-        return order;
+    public static Basket getBasket() {
+        return basket;
     }
 
-    public static void setOrder(Order order) {
-        Shop.order = order;
+    public static void setBasket(Basket basket) {
+        Shop.basket = basket;
     }
 
     public static Stock getStock() {

@@ -11,7 +11,7 @@ import static ru.on_the_zero.utility.SOP.println;
 /**
  * Created by N on 20.11.2016.
  */
-public class Order implements Serializable {
+public class Basket implements Serializable {
 
     private ArrayList<Food> orderFoods = new ArrayList<>();
     private ArrayList<Clothing> orderClothing = new ArrayList<>();

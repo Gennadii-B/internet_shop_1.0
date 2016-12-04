@@ -1,7 +1,7 @@
 package ru.on_the_zero.utility.commands;
 
 import ru.on_the_zero.entity.AbstractProduct;
-import ru.on_the_zero.entity.Order;
+import ru.on_the_zero.entity.Basket;
 import ru.on_the_zero.utility.Shop;
 
 import java.util.ArrayList;
@@ -27,12 +27,12 @@ public class Show implements Command {
         if(messege.length > 1 && messege[1].equals("technics"))
             showType(Shop.getStock().getProductsTechnics());
 
-        if(messege.length > 1 && Shop.getOrder() != null && messege[1].equals("basket"))
-            Shop.getOrder().showOrderProducts();
+        if(messege.length > 1 && Shop.getBasket() != null && messege[1].equals("basket"))
+            Shop.getBasket().showOrderProducts();
 
         if(messege.length > 1 && messege[1].equals("orders"))
-            for(Order order: Shop.getStock().getOrders()){
-            order.showOrderProducts();
+            for(Basket basket : Shop.getStock().getBaskets()){
+            basket.showOrderProducts();
             }
     }
 

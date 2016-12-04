@@ -2,7 +2,7 @@ package ru.on_the_zero.utility;
 
 import ru.on_the_zero.entity.Clothing;
 import ru.on_the_zero.entity.Food;
-import ru.on_the_zero.entity.Order;
+import ru.on_the_zero.entity.Basket;
 import ru.on_the_zero.entity.Technics;
 
 import java.io.*;
@@ -50,7 +50,7 @@ public class Unpacking {
         shop.getStock().setProductsFood((ArrayList<Food>) (deserData("src/ru/on_the_zero/db/archive/Food")));
         shop.getStock().setProductsClothing((ArrayList<Clothing>) (deserData("src/ru/on_the_zero/db/archive/Clothing")));
         shop.getStock().setProductsTechnics((ArrayList<Technics>) (deserData("src/ru/on_the_zero/db/archive/Technics")));
-        shop.getStock().setOrders((ArrayList<Order>) (deserData("src/ru/on_the_zero/db/archive/Orders")));
-        shop.setOrder((Order)(deserData("src/ru/on_the_zero/db/archive/actualOrder")));
+        shop.getStock().setBaskets((ArrayList<Basket>) (deserData("src/ru/on_the_zero/db/archive/Baskets")));
+        shop.setBasket((Basket)(deserData("src/ru/on_the_zero/db/archive/actualBasket")));
     }
 }

@@ -1,9 +1,7 @@
 package ru.on_the_zero.db;
 
 import ru.on_the_zero.entity.*;
-import ru.on_the_zero.utility.Packing;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -14,11 +12,11 @@ public class Stock {
     private ArrayList<Food> productsFood = new ArrayList<>();
     private ArrayList<Clothing> productsClothing = new ArrayList<>();
     private ArrayList<Technics> productsTechnics = new ArrayList<>();
-    private ArrayList<Order> Orders = new ArrayList<>();
+    private ArrayList<Basket> baskets = new ArrayList<>();
 
 
-    public ArrayList<Order> getOrders() {
-        return Orders;
+    public ArrayList<Basket> getBaskets() {
+        return baskets;
     }
 
     public ArrayList<Food> getProductsFood() {
@@ -46,7 +44,7 @@ public class Stock {
         this.productsTechnics = productsTechnics;
     }
 
-    public void setOrders(ArrayList<Order> orders) {
-        Orders = orders;
+    public void setBaskets(ArrayList<Basket> baskets) {
+        this.baskets = baskets;
     }
 }

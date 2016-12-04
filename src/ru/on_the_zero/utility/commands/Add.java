@@ -11,18 +11,18 @@ public class Add implements Command {
 
     @Override
     public void action(String[] messege) {
-        if(Shop.getOrder() == null) println(Texts.TEXT_CREATE_NEW_ORDER);
+        if(Shop.getBasket() == null) println(Texts.TEXT_CREATE_NEW_ORDER);
 
-        if(Shop.getOrder() != null && messege[1].equals("food")) {
-            Shop.getOrder().getOrderFoods().add(SearchFood.find(messege));
+        if(Shop.getBasket() != null && messege[1].equals("food")) {
+            Shop.getBasket().getOrderFoods().add(SearchFood.find(messege));
             println(Texts.TEXT_PRODUCT_ADDED);
         }
-        if(Shop.getOrder() != null && messege[1].equals("clothing")) {
-            Shop.getOrder().getOrderClothing().add(SearchClothing.find(messege));
+        if(Shop.getBasket() != null && messege[1].equals("clothing")) {
+            Shop.getBasket().getOrderClothing().add(SearchClothing.find(messege));
             println(Texts.TEXT_PRODUCT_ADDED);
         }
-        if(Shop.getOrder() != null && messege[1].equals("technics")) {
-            Shop.getOrder().getOrderTechnicses().add(SearchTechnics.find(messege));
+        if(Shop.getBasket() != null && messege[1].equals("technics")) {
+            Shop.getBasket().getOrderTechnicses().add(SearchTechnics.find(messege));
             println(Texts.TEXT_PRODUCT_ADDED);
         }
     }

@@ -36,7 +36,7 @@ public class Packing {
         serData("src/ru/on_the_zero/db/archive/Food", shop.getStock().getProductsFood());
         serData("src/ru/on_the_zero/db/archive/Clothing", shop.getStock().getProductsClothing());
         serData("src/ru/on_the_zero/db/archive/Technics", shop.getStock().getProductsTechnics());
-        serData("src/ru/on_the_zero/db/archive/Orders", shop.getStock().getOrders());
-        serData("src/ru/on_the_zero/db/archive/actualOrder", shop.getOrder());
+        serData("src/ru/on_the_zero/db/archive/Baskets", shop.getStock().getBaskets());
+        serData("src/ru/on_the_zero/db/archive/actualBasket", shop.getBasket());
     }
 }
