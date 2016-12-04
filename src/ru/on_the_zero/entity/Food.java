@@ -1,11 +1,12 @@
 package ru.on_the_zero.entity;
 
+import java.io.Serializable;
 import java.time.LocalDate;
-import static ru.on_the_zero.entity.tools.SOP.println;
+import static ru.on_the_zero.utility.SOP.println;
 /**
  * Created by N on 20.11.2016.
  */
-public class Food extends AbstractProduct {
+public class Food extends AbstractProduct implements Serializable {
     private float amount;
     private LocalDate dateMake;
     private LocalDate dateValid;
@@ -22,6 +23,7 @@ public class Food extends AbstractProduct {
         this.dateMake = dateMake;
         this.dateValid = dateValid;
     }
+
 
     public LocalDate getDateMake() {
         return dateMake;

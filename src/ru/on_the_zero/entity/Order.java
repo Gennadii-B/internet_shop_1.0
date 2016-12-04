@@ -1,29 +1,31 @@
 package ru.on_the_zero.entity;
 
-import ru.on_the_zero.db.Controller;
+import ru.on_the_zero.utility.commands.Show;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import static ru.on_the_zero.entity.tools.SOP.println;
+import static ru.on_the_zero.utility.SOP.println;
 
 /**
  * Created by N on 20.11.2016.
  */
-public class Order {
+public class Order implements Serializable {
 
-    ArrayList<Food> orderFoods = new ArrayList<>();
-    ArrayList<Clothing> orderClothing = new ArrayList<>();
-    ArrayList<Technics> orderTechnicses = new ArrayList<>();
-    LocalDate dateBuy;
-
-    Controller control = Controller.getInstance();
+    private ArrayList<Food> orderFoods = new ArrayList<>();
+    private ArrayList<Clothing> orderClothing = new ArrayList<>();
+    private ArrayList<Technics> orderTechnicses = new ArrayList<>();
+    private LocalDate dateBuy;
 
     public void showOrderProducts(){
-        control.showType(orderFoods);
-        control.showType(orderClothing);
-        control.showType(orderTechnicses);
-        println("\n общая стоимость: " + summ());
+        println("///// " + dateBuy + " /////");
+       // println("номер покупки: ");
+        println("товары: ");
+        Show.showType(orderFoods);
+        Show.showType(orderClothing);
+        Show.showType(orderTechnicses);
+        println("\n общая стоимость: " + summ() + "\n");
     }
 
     public int summ(){

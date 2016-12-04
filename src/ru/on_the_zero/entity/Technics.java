@@ -1,6 +1,6 @@
 package ru.on_the_zero.entity;
 
-import static ru.on_the_zero.entity.tools.SOP.println;
+import static ru.on_the_zero.utility.SOP.println;
 /**
  * Created by N on 20.11.2016.
  */
@@ -10,7 +10,7 @@ public class Technics extends AbstractProduct {
 
     public void showInfo(){
         super.showInfo();
-        println("       "+ "Кол-во: "+ amount + " /// Гарантия: " + guarantee);
+        println("       " + "Кол-во: "+ amount + " /// Гарантия: " + guarantee);
     }
 
     public Technics(String name, int id, int price, int amount, boolean guarantee) {

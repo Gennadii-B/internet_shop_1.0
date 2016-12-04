@@ -1,13 +1,15 @@
 package ru.on_the_zero.entity;
 
-import static ru.on_the_zero.entity.tools.SOP.println;
+import java.io.Serializable;
+
+import static ru.on_the_zero.utility.SOP.println;
 /**
  * Created by N on 20.11.2016.
  */
-public class Clothing extends AbstractProduct {
-    int amount;
-    String color;
-    int size;
+public class Clothing extends AbstractProduct implements Serializable {
+    private int amount;
+    private String color;
+    private int size;
 
     public void showInfo(){
         super.showInfo();

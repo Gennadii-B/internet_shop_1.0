@@ -1,17 +1,20 @@
 package ru.on_the_zero.entity;
 
-import static ru.on_the_zero.entity.tools.SOP.println;
+import java.io.Serializable;
+
+import static ru.on_the_zero.utility.SOP.println;
 /**
  * Created by N on 20.11.2016.
  */
-public abstract class AbstractProduct {
-    private String name;
-    private int id;
-    private int price;
+public abstract class AbstractProduct implements Serializable{
+    String name;
+    int id;
+    int price;
+
+    public AbstractProduct(){}
 
     public void showInfo(){
         println(id + ". " + name + " /// Цена: " + price);
-
     }
 
     public AbstractProduct(String name) {

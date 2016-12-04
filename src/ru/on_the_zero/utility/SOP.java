@@ -1,4 +1,4 @@
-package ru.on_the_zero.entity.tools;
+package ru.on_the_zero.utility;
 
 import java.time.LocalDate;
 
