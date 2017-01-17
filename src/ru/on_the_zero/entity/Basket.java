@@ -19,7 +19,7 @@ public class Basket implements Serializable {
     private LocalDate dateBuy;
 
     public void showOrderProducts(){
-        println("///// " + dateBuy + " /////");
+        println("\n///// [ BASKET ] /////");
        // println("номер покупки: ");
         println("товары: ");
         Show.showType(orderFoods);

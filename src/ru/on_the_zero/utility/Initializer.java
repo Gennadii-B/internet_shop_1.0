@@ -51,7 +51,7 @@ public class Initializer {
         setCom(new Add());
         setCom(new Exit());
         setCom(new Help());
-        setCom(new NewBuy());
+        setCom(new Clean());
         setCom(new Show());
         setCom(new Pay());
     }

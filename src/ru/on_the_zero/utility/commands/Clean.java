@@ -7,17 +7,17 @@ import ru.on_the_zero.utility.Shop;
 /**
  * Created by gendy on 02.12.16.
  */
-public class NewBuy implements Command {
+public class Clean implements Command {
 
     @Override
     public void action(String[] messege) {
         Shop.setBasket(new Basket());
-        System.out.println(Texts.TEXT_CREATED_NEW_ORDER);
+        System.out.println(Texts.TEXT_CLEAN_BASKET);
     }
 
     @Override
     public String getName() {
-        return "new buy";
+        return "clean";
     }
 }
 

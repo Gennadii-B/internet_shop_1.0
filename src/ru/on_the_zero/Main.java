@@ -1,15 +1,23 @@
 package ru.on_the_zero;
 
 import ru.on_the_zero.db.Texts;
+import ru.on_the_zero.entity.Basket;
 import ru.on_the_zero.utility.commands.Command;
 import ru.on_the_zero.utility.Reader;
 import ru.on_the_zero.utility.*;
 
 import static ru.on_the_zero.utility.SOP.println;
 
+
 public class Main {
 
     public static void main(String[] args) throws Exception {
+
+        //******** Postgres ***********
+        DaoBase daoBase = DaoBase.getInstance();
+        daoBase.RegDriverManager();
+        daoBase.connect();
+        //*****************************
 
         String[] messege;
         Command command;
@@ -24,6 +32,8 @@ public class Main {
 
         println(Texts.TEXT_HELLO + "\n" +
                 Texts.TEXT_ALL_COMMANDS);
+        if(shop.getBasket() != null)shop.getBasket().showOrderProducts();
+        else shop.setBasket(new Basket());
 
         while(shop.isShopStatus()){
             messege = Reader.readLine();
@@ -32,5 +42,6 @@ public class Main {
         }
 
         packing.pack();
+        daoBase.close();
     }
 }

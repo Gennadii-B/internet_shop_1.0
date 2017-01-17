@@ -1,6 +1,7 @@
 package ru.on_the_zero.utility.commands;
 
 import ru.on_the_zero.db.Texts;
+import ru.on_the_zero.entity.Basket;
 import ru.on_the_zero.utility.Shop;
 
 import java.time.LocalDate;
@@ -16,6 +17,7 @@ public class Pay implements Command{
         Shop.getStock().getBaskets().add(Shop.getBasket());
         Shop.setBasket(null);
         System.out.println(Texts.TEXT_BUY_CLOSED);
+        Shop.setBasket(new Basket());
     }
 
     @Override
