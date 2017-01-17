@@ -14,9 +14,9 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         //******** Postgres ***********
-        DaoBase daoBase = DaoBase.getInstance();
-        daoBase.RegDriverManager();
-        daoBase.connect();
+        DaoBaseController daoBaseController = DaoBaseController.getInstance();
+        daoBaseController.RegDriverManager();
+        daoBaseController.connect();
         //*****************************
 
         String[] messege;
@@ -36,12 +36,17 @@ public class Main {
         else shop.setBasket(new Basket());
 
         while(shop.isShopStatus()){
-            messege = Reader.readLine();
-            command = shop.processing(messege);
-            command.action(messege);
+            try {
+                messege = Reader.readLine();
+                command = shop.processing(messege);
+                command.action(messege);
+            }catch(NullPointerException e){
+                System.out.println("упс =)");
+            }
         }
 
+        packing.packBasketDB(shop.getBasket());
         packing.pack();
-        daoBase.close();
+        daoBaseController.close();
     }
 }

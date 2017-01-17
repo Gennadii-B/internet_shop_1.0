@@ -2,6 +2,8 @@ package ru.on_the_zero.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.sql.Date;
+
 import static ru.on_the_zero.utility.SOP.println;
 /**
  * Created by N on 20.11.2016.
@@ -16,6 +18,8 @@ public class Food extends AbstractProduct implements Serializable {
         println("        Кол-во: "+ amount + " /// Дата изготовления: " +
                 dateMake + " /// Годен до: " + dateValid);
     }
+
+    public Food(){}
 
     public Food(String name, int id, int price, float amount, LocalDate dateMake, LocalDate dateValid) {
         super(name, id, price);
@@ -52,4 +56,6 @@ public class Food extends AbstractProduct implements Serializable {
     public void setAmount(float amount) {
         this.amount = amount;
     }
+
+
 }

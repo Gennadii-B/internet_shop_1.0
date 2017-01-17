@@ -13,6 +13,8 @@ public class Technics extends AbstractProduct {
         println("       " + "Кол-во: "+ amount + " /// Гарантия: " + guarantee);
     }
 
+    public Technics(){}
+
     public Technics(String name, int id, int price, int amount, boolean guarantee) {
         super(name, id, price);
         this.amount = amount;
@@ -38,4 +40,6 @@ public class Technics extends AbstractProduct {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+
 }

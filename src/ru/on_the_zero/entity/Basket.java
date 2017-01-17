@@ -56,4 +56,16 @@ public class Basket implements Serializable {
     public ArrayList<Technics> getOrderTechnicses() {
         return orderTechnicses;
     }
+
+    public void setOrderFoods(ArrayList<Food> orderFoods) {
+        this.orderFoods = orderFoods;
+    }
+
+    public void setOrderClothing(ArrayList<Clothing> orderClothing) {
+        this.orderClothing = orderClothing;
+    }
+
+    public void setOrderTechnicses(ArrayList<Technics> orderTechnicses) {
+        this.orderTechnicses = orderTechnicses;
+    }
 }

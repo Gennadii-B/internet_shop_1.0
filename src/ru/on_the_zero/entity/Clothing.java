@@ -16,6 +16,8 @@ public class Clothing extends AbstractProduct implements Serializable {
         println("       " + "Кол-во: " + amount + " /// Цвет: " + color + " /// Размер: " + size);
     }
 
+    public Clothing(){}
+
     public Clothing(String name, int id, int price, int amount, String color, int size) {
         super(name, id, price);
         this.amount = amount;
@@ -50,4 +52,6 @@ public class Clothing extends AbstractProduct implements Serializable {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+
 }

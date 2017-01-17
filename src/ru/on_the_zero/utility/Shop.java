@@ -25,7 +25,7 @@ public class Shop {
 
     private static ArrayList<Command> commands = new ArrayList<>();
     private static Stock stock = new Stock();
-    private static Basket basket;
+    private static Basket basket = Unpacking.loadBasketFromDB();
 
     public Command processing(String[] messege){
         Command needCommand = null;

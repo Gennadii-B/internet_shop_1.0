@@ -17,10 +17,7 @@ public class Unpacking {
     private FileInputStream fileIn;
     private ObjectInputStream in;
     private Shop shop = Shop.getInstance();
-    ByteArrayInputStream bais;
-    ObjectInputStream ois;
-    Basket res;
-    DaoBase daoBase = DaoBase.getInstance();
+    private static DaoBaseController daoBaseController = DaoBaseController.getInstance();
 
     public Object deserData(String fileName) throws IOException {
         Object retObject = null;
@@ -51,34 +48,22 @@ public class Unpacking {
         return file.exists();
     }
 
-    Basket deserToDB(byte[] bytes) throws IOException {
-        try {
-            bais = new ByteArrayInputStream(bytes);
-            ois = new ObjectInputStream(bais);
-            res = (Basket) ois.readObject();
-            return res;
-
-        } catch (FileNotFoundException e) {
-            System.out.println("файл не найден");
-            System.exit(1);
-        } catch (IOException e) {
-            System.out.println("ошибка ввода/вывода");
-            e.printStackTrace();
-            System.exit(2);
-        } finally {
-            ois.close();
-            bais.close();
-            return res;
-        }
-    }
-
-
     public void unpack() throws IOException, SQLException{
         shop.getStock().setProductsFood((ArrayList<Food>) (deserData("src/ru/on_the_zero/db/archive/Food")));
         shop.getStock().setProductsClothing((ArrayList<Clothing>) (deserData("src/ru/on_the_zero/db/archive/Clothing")));
         shop.getStock().setProductsTechnics((ArrayList<Technics>) (deserData("src/ru/on_the_zero/db/archive/Technics")));
         shop.getStock().setBaskets((ArrayList<Basket>) (deserData("src/ru/on_the_zero/db/archive/Baskets")));
-     //   shop.setBasket((Basket)(deserData("src/ru/on_the_zero/db/archive/actualBasket")));
-        shop.setBasket(deserToDB(daoBase.getBasket()));
+    }
+
+    public static Basket loadBasketFromDB(){
+        Basket basket = new Basket();
+        try {
+            basket.setOrderFoods(daoBaseController.readFoodFromDB());
+            basket.setOrderClothing(daoBaseController.readClothingFromDB());
+            basket.setOrderTechnicses(daoBaseController.readTechnicsFromDB());
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return basket;
     }
 }
